@@ -10,7 +10,7 @@ const SearchForm = props => {
           value={props.search}
           onChange={props.handleInputChange}
           name="name"
-          list="breeds"
+          list="employees"
           type="text"
           className="form-control"
           placeholder="Search for a User by Name."
