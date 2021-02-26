@@ -2,9 +2,8 @@ import React from "react";
 
 // Using the datalist element we can create autofill suggestions based on the props.breeds array
 const SearchForm = props => {
-  console.log(props.employees);
   return (
-    <form className="search">
+    <form className="search" onChange={props.handleFormSubmit}>
       <div className="form-group">
         <label htmlFor="name">Name:</label>
         <input
@@ -25,13 +24,6 @@ const SearchForm = props => {
             />
           ))}
         </datalist>
-        <button
-          type="submit"
-          onClick={props.handleFormSubmit}
-          className="btn btn-success"
-        >
-          Search
-        </button>
       </div>
     </form>
   );
