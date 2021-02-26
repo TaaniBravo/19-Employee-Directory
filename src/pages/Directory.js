@@ -14,12 +14,13 @@ const Directory = () => {
     try {
       API.getEmployees(25).then(res => {
         setEmployees([...res.data.results]);
-        setResults([...employees]);
+        setResults([...res.data.results]);
       });
     } catch (err) {
       console.log(err);
     }
   }, []);
+
   const handleInputChange = e => {
     setResults(e.target.value);
   };
