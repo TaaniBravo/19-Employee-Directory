@@ -9,7 +9,7 @@ const About = () => {
   return (
     <div>
       <Hero backgroundImage={backgroundImage}>
-        <h1>Keep your team organized with this Directory.</h1>
+        <h1>Keep your team connected.</h1>
         <h2>Manage with ease.</h2>
       </Hero>
       <Container>

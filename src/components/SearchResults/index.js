@@ -4,18 +4,18 @@ const SearchResults = ({ results }) => {
   return (
     <ul className="list-group search-results">
       {results.map(result => (
-        <div>
-          <li key={result.login.uuid} className="list-group-item">
+        <div key={result.login.uuid}>
+          <li className="list-group-item">
             <img
               alt={`${result.name.first} ${result.name.last}`}
               src={result.picture.large}
               className="img-fluid"
             />
             <h2>{`${result.name.first} ${result.name.last}`}</h2>
+            <p>Age: {result.dob.age}</p>
             <p>Email: {result.email}</p>
-            <p></p>
-            <p></p>
-            <button className="btn btn-primary">See More</button>
+            <p>Phone: {result.phone}</p>
+            <p>Preferred Title: {result.name.title}</p>
           </li>
         </div>
       ))}

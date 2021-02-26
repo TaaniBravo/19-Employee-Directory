@@ -5,7 +5,6 @@ import SearchResults from "../components/SearchResults/index";
 import API from "../utils/API";
 
 const Directory = () => {
-  // const [search, setSearch] = useState("");
   const [employees, setEmployees] = useState([]);
   const [results, setResults] = useState([]);
   const [error, setError] = useState("");
@@ -14,7 +13,10 @@ const Directory = () => {
     try {
       API.getEmployees(25).then(res => {
         setEmployees([...res.data.results]);
-        setResults([...res.data.results]);
+        const sorted = [...res.data.results].sort((a, b) =>
+          a.name.first > b.name.first ? 1 : -1
+        );
+        setResults([...sorted]);
       });
     } catch (err) {
       console.log(err);
@@ -41,12 +43,48 @@ const Directory = () => {
     }
   };
 
+  const handleSort = sortedBy => {
+    console.log(sortedBy);
+    let sorted;
+    switch (sortedBy) {
+      case "First Name":
+        sorted = employees.sort((a, b) =>
+          a.name.first > b.name.first ? 1 : -1
+        );
+        console.log(sorted);
+        setResults([...sorted]);
+        break;
+      case "Last Name":
+        sorted = employees.sort((a, b) => (a.name.last > b.name.last ? 1 : -1));
+        setResults([...sorted]);
+        console.log(sorted);
+        break;
+      case "Age":
+        sorted = employees.sort((a, b) => (a.dob.age > b.dob.age ? 1 : -1));
+        setResults([...sorted]);
+        console.log(sorted);
+        break;
+      case "Email":
+        sorted = employees.sort((a, b) => (a.email > b.email ? 1 : -1));
+        setResults([...sorted]);
+        console.log(sorted);
+        break;
+      default:
+        sorted = employees.sort((a, b) =>
+          a.name.first > b.name.first ? 1 : -1
+        );
+        setResults([...sorted]);
+        break;
+    }
+  };
+
   return (
     <div>
       <Container style={{ minHeight: "80%" }}>
         <SearchForm
           handleFormSubmit={handleFormSubmit}
           handleInputChange={handleInputChange}
+          handleSort={handleSort}
           employees={employees}
         />
         <SearchResults results={results} />

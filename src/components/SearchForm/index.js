@@ -16,6 +16,20 @@ const SearchForm = props => {
           placeholder="Search for a User by Name."
           id="employee"
         />
+        <label htmlFor="sort">Sort:</label>
+        <select
+          className="form-control"
+          name="sort"
+          id="sort"
+          onChange={() =>
+            props.handleSort(document.querySelector("#sort").value)
+          }
+        >
+          <option value="First Name">First Name A-Z</option>
+          <option value="Last Name">Last Name A-Z</option>
+          <option value="Age">Age</option>
+          <option value="Email">Email</option>
+        </select>
         <datalist id="employees">
           {props.employees.map(employee => (
             <option

@@ -18,25 +18,12 @@ const Navbar = () => {
               <Link
                 to="/"
                 className={
-                  window.location.pathname === "/" ||
-                  window.location.pathname === "/about"
+                  window.location.pathname === "/"
                     ? "nav-link active"
                     : "nav-link"
                 }
               >
                 About
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/search"
-                className={
-                  window.location.pathname === "/search"
-                    ? "nav-link active"
-                    : "nav-link"
-                }
-              >
-                Search
               </Link>
             </li>
             <li className="nav-item">
@@ -61,9 +48,6 @@ const Navbar = () => {
           <Route exact path="/">
             <About />
           </Route>
-          {/* <Route path="/Search">
-              <Search />
-            </Route> */}
           <Route path="/Directory">
             <Directory />
           </Route>
