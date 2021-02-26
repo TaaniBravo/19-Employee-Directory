@@ -1,14 +1,15 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar/index";
+// import API from "../utils/API";
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <Navbar></Navbar>
-      </div>
-    );
-  }
-}
+const App = () => {
+  const [employees, setEmployees] = useState([]);
+
+  return (
+    <div>
+      <Navbar></Navbar>
+    </div>
+  );
+};
 
 export default App;
