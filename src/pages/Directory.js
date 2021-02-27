@@ -31,11 +31,12 @@ const Directory = () => {
     e.preventDefault();
 
     try {
-      const searchRes = employees.filter(employee =>
+      let searchRes = employees.filter(employee =>
         `${employee.name.first} ${employee.name.last}`
           .toLowerCase()
-          .includes(e.target.value.toLowerCase())
+          .includes(document.querySelector("#employee").value.toLowerCase())
       );
+
       setResults([...searchRes]);
     } catch (err) {
       setError(err.message);
