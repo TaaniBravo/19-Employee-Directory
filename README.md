@@ -1,6 +1,6 @@
 # Unit 19 TeamBase: Employee-Directory
 
-![Video](https://media.giphy.com/media/p8rJrJ4S7Igkyd5535/giphy.gif)
+![Video](https://media.giphy.com/media/mGdoZjU68hoarvRnDM/giphy.gif)
 
 [Live URL](https://teambase-directory.herokuapp.com/)
 
